@@ -1,7 +1,0 @@
-order_add:
-    path: /front/order/add
-    controller: App\Controller\DefaultController::orderAction
-
-customer_add:
-    path: /front/customer/add
-    controller: App\Controller\DefaultController::customerAction

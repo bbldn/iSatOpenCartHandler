@@ -6,6 +6,7 @@ use Throwable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Messenger\OrderFrontHasBeenCreatedMessage;
+use Symfony\Component\Routing\Annotation\Route;
 use Messenger\CustomerFrontHasBeenCreatedMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Messenger\MessageBusInterface as MessageBus;
@@ -26,6 +27,8 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/front/order/add", name="order_add")
+     *
      * @param Request $request
      * @return Response
      */
@@ -45,6 +48,8 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/front/customer/add", name="customer_add")
+     *
      * @param Request $request
      * @return Response
      */
