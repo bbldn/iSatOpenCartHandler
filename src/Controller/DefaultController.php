@@ -11,9 +11,6 @@ use Messenger\CustomerFrontHasBeenCreatedMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Messenger\MessageBusInterface as MessageBus;
 
-/**
- * @psalm-suppress PropertyNotSetInConstructor
- */
 class DefaultController extends AbstractController
 {
     private MessageBus $messageBus;
@@ -27,11 +24,10 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/front/order/add", name="order_add")
-     *
      * @param Request $request
      * @return Response
      */
+    #[Route(path: "/front/order/add", name: "order_add")]
     public function orderAction(Request $request): Response
     {
         $orderId = (int)$request->get('orderId', -1);
@@ -48,11 +44,10 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/front/customer/add", name="customer_add")
-     *
      * @param Request $request
      * @return Response
      */
+    #[Route(path: "/front/customer/add", name: "customer_add")]
     public function customerAction(Request $request): Response
     {
         $customerId = (int)$request->get('customerId', -1);
